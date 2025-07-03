@@ -1,31 +1,36 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const linkBase =
+    "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300";
+  const linkInactive = "text-gray-300 hover:text-white hover:bg-blue-500";
+  const linkActive = "text-white bg-blue-700";
+
   return (
-    <nav className="bg-blue-600 text-white shadow">
+    <nav className="bg-blue-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex">
-            <Link
-              to="/"
-              className="flex items-center text-xl font-bold hover:text-gray-200"
-            >
-              MyApp
-            </Link>
+          <div className="flex items-center">
+            <span className="text-white font-bold text-xl">MyApp</span>
           </div>
           <div className="flex space-x-4 items-center">
-            <Link
+            <NavLink
               to="/"
-              className="hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium"
+              end
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? linkActive : linkInactive}`
+              }
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/about"
-              className="hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium"
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? linkActive : linkInactive}`
+              }
             >
               About
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
