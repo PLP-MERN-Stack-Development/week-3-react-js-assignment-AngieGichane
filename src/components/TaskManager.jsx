@@ -38,8 +38,8 @@ function TaskManager() {
   });
 
   return (
-    <div className="bg-gray-100 p-4 rounded shadow-md dark:bg-gray-800">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Task Manager</h2>
+    <div>
+      <h2 className="text-2xl font-bold mb-4">Task Manager</h2>
 
       <div className="flex space-x-2 mb-4">
         <input
@@ -53,9 +53,24 @@ function TaskManager() {
       </div>
 
       <div className="flex space-x-2 mb-4">
-        <Button onClick={() => setFilter("all")} variant={filter === "all" ? "primary" : "secondary"}>All</Button>
-        <Button onClick={() => setFilter("active")} variant={filter === "active" ? "primary" : "secondary"}>Active</Button>
-        <Button onClick={() => setFilter("completed")} variant={filter === "completed" ? "primary" : "secondary"}>Completed</Button>
+        <Button
+          onClick={() => setFilter("all")}
+          variant={filter === "all" ? "primary" : "secondary"}
+        >
+          All
+        </Button>
+        <Button
+          onClick={() => setFilter("active")}
+          variant={filter === "active" ? "primary" : "secondary"}
+        >
+          Active
+        </Button>
+        <Button
+          onClick={() => setFilter("completed")}
+          variant={filter === "completed" ? "primary" : "secondary"}
+        >
+          Completed
+        </Button>
       </div>
 
       <ul>
